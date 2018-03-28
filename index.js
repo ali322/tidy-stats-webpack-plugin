@@ -44,7 +44,7 @@ TidyStatsPlugin.prototype.apply = function(compiler) {
       clearConsole()
     }
     let tipPrefix = identifier ? `Build ${identifier}` : 'Build'
-    let tipSuffix = time ? ` at ${now()} by ${duration}`: ''
+    let tipSuffix = time ? ` at ${now()} by ${duration}ms`: ''
     if (messages.errors.length) {
       tip(`${tipPrefix} failed${tipSuffix}`, 'error')
       messages.errors.forEach(function(e) {
