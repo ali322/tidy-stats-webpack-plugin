@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/v/tidy-stats-webpack-plugin.svg)](https://www.npmjs.com/package/tidy-stats-webpack-plugin)
 [![Build Status](https://travis-ci.org/ali322/tidy-stats-webpack-plugin.svg?branch=master)](https://travis-ci.org/ali322/tidy-stats-webpack-plugin)
 
-Tidy-stats-webpack-plugin recognizes certain classes of webpack
-stats and cleans, aggregates and prioritizes them to provide a better
+Tidy-stats-webpack-plugin output more tidy and clearness
+stats, provide a better
 Developer Experience.
 
 ## Getting started
