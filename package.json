@@ -1,13 +1,14 @@
 {
   "name": "tidy-stats-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tidy stats webpack plugin",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "util"
   ],
   "keywords": [
     "tidy",
