@@ -85,6 +85,8 @@ new TidyStatsPlugin({
   errorsOnly: true,
   // dont show assets
   ignoreAsset: false,
+  // should show finish time and duaration
+  time: true
   // should the console be cleared between each compilation?
   // default is true
   clearConsole: true
