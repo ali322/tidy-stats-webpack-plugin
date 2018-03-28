@@ -1,7 +1,7 @@
-# Tidy-stats-webpack-plugin
+Tidy-stats-webpack-plugin [![Build Status](https://travis-ci.org/ali322/tidy-stats-webpack-plugin.svg?branch=master)](https://travis-ci.org/ali322/tidy-stats-webpack-plugin)[![npm version](https://badge.fury.io/js/tidy-stats-webpack-plugin.svg)](https://badge.fury.io/js/tidy-stats-webpack-plugin)
+===
 
-[![npm](https://img.shields.io/npm/v/tidy-stats-webpack-plugin.svg)](https://www.npmjs.com/package/tidy-stats-webpack-plugin)
-[![Build Status](https://travis-ci.org/ali322/tidy-stats-webpack-plugin.svg?branch=master)](https://travis-ci.org/ali322/tidy-stats-webpack-plugin)
+[![NPM](https://nodei.co/npm/tidy-stats-webpack-plugin.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/tidy-stats-webpack-plugin/)
 
 Tidy-stats-webpack-plugin output more tidy and clearness
 stats, provide a better
