@@ -4,6 +4,7 @@ let clearConsole = require('clear-console')
 let { emojis } = require('./util')
 let formatMessages = require('./util/format-message')
 let formatAsset = require('./util/format-asset')
+let { sprintf } = require('sprintf-js')
 
 function TidyStatsPlugin(options) {
   this.options = options || {}
@@ -29,6 +30,7 @@ function now() {
 TidyStatsPlugin.prototype.apply = function(compiler) {
   let options = this.options
   let onErrors = options.onErrors || function() {}
+  let logText = options.logText || {}
   let onWarnings = options.onWarnings || function() {}
   let writeToFile = options.writeToFile
   let errorsOnly = options.errorsOnly || false
@@ -43,24 +45,40 @@ TidyStatsPlugin.prototype.apply = function(compiler) {
     if (shouldClear) {
       clearConsole()
     }
-    let tipPrefix = identifier ? `Build ${identifier}` : 'Build'
-    let tipSuffix = time ? ` at ${now()} by ${duration}ms`: ''
+    let tipPrefix = identifier ? 'Build %s' : 'Build'
+    let tipSuffix = time ? ` at %s by %dms` : ''
     if (messages.errors.length) {
-      tip(`${tipPrefix} failed${tipSuffix}`, 'error')
+      tip(
+        sprintf(
+          logText.error || `${tipPrefix} failed${tipSuffix}`,
+          identifier,
+          now(),
+          duration
+        ),
+        'error'
+      )
       messages.errors.forEach(function(e) {
         bufs.push(chalk.red(e))
       })
       onErrors(messages.errors)
     } else {
       if (messages.warnings.length) {
-        tip(`${tipPrefix} with warnings${tipSuffix}`, 'warning')
+        tip(
+          sprintf(
+            logText.warn || `${tipPrefix} with warnings${tipSuffix}`,
+            identifier,
+            now(),
+            duration
+          ),
+          'warning'
+        )
         messages.warnings.forEach(function(e) {
           bufs.push(chalk.yellow(e))
         })
         onWarnings(messages.warnings)
       } else {
         !errorsOnly &&
-          tip(`${tipPrefix} success${tipSuffix}` )
+          tip(sprintf(logText.success || `${tipPrefix} success${tipSuffix}`))
       }
       !ignoreAssets &&
         bufs.push(formatAsset(stats.toJson({ chunks: false, modules: false })))

@@ -1,6 +1,6 @@
 {
   "name": "tidy-stats-webpack-plugin",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "tidy stats webpack plugin",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,7 @@
     "clear-console": "^1.1.0",
     "fs-extra": "^5.0.0",
     "node-emoji": "^1.8.1",
+    "sprintf-js": "^1.1.2",
     "webpack-format-messages": "^1.0.2"
   }
 }
