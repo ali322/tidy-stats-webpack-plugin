@@ -1,5 +1,5 @@
 let fs = require('fs-extra')
-let chalk = require('chalk')
+let colors = require('colors')
 let clearConsole = require('clear-console')
 let { emojis } = require('./util')
 let formatMessages = require('./util/format-message')
@@ -12,18 +12,18 @@ function TidyStatsPlugin(options) {
 
 function tip(info, level = 'success') {
   let emoji = ':ok_hand:'
-  let color = chalk.green
+  let text = colors.green(info)
   switch (level) {
     case 'error':
       emoji = ':broken_heart:'
-      color = chalk.yellow
+      text = colors.red(info)
       break
     case 'warning':
       emoji = ':warning:'
-      color = chalk.red
+      text = colors.yellow(info)
       break
   }
-  console.log(emojis(emoji) + '  ' + color(info))
+  console.log(emojis(emoji) + '  ' + text)
 }
 
 function now() {
@@ -61,7 +61,7 @@ TidyStatsPlugin.prototype.apply = function(compiler) {
         'error'
       )
       messages.errors.forEach(function(e) {
-        bufs.push(chalk.red(e))
+        bufs.push(colors.red(e))
       })
       onErrors(messages.errors)
     } else {
@@ -76,7 +76,7 @@ TidyStatsPlugin.prototype.apply = function(compiler) {
           'warning'
         )
         messages.warnings.forEach(function(e) {
-          bufs.push(chalk.yellow(e))
+          bufs.push(colors.yellow(e))
         })
         onWarnings(messages.warnings)
       } else {
