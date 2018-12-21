@@ -1,6 +1,6 @@
 {
   "name": "tidy-stats-webpack-plugin",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "tidy stats webpack plugin",
   "main": "index.js",
   "scripts": {

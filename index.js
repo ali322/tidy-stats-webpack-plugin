@@ -12,15 +12,18 @@ function TidyStatsPlugin(options) {
 
 function tip(info, level = 'success') {
   let emoji = ':ok_hand:'
+  let color = chalk.green
   switch (level) {
     case 'error':
       emoji = ':broken_heart:'
+      color = chalk.yellow
       break
     case 'warning':
       emoji = ':warning:'
+      color = chalk.red
       break
   }
-  console.log(emojis(emoji) + '  ' + chalk.yellow(info))
+  console.log(emojis(emoji) + '  ' + color(info))
 }
 
 function now() {
