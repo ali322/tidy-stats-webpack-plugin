@@ -20,7 +20,7 @@ function tip(info, level = 'success') {
       emoji = ':warning:'
       break
   }
-  console.log(emojis(emoji) + '  ' + info)
+  console.log(emojis(emoji) + '  ' + chalk.yellow(info))
 }
 
 function now() {
