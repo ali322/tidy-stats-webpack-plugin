@@ -78,7 +78,14 @@ TidyStatsPlugin.prototype.apply = function(compiler) {
         onWarnings(messages.warnings)
       } else {
         !errorsOnly &&
-          tip(sprintf(logText.success || `${tipPrefix} success${tipSuffix}`))
+          tip(
+            sprintf(
+              logText.success || `${tipPrefix} success${tipSuffix}`,
+              identifier,
+              now(),
+              duration
+            )
+          )
       }
       !ignoreAssets &&
         bufs.push(formatAsset(stats.toJson({ chunks: false, modules: false })))
