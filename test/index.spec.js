@@ -21,6 +21,7 @@ describe('Tidy Stats Plugin', () => {
         },
         plugins: [
           new TidyStatsPlugin({
+            identifier: 'main',
             writeToFile: STATS_PATH
           })
         ]
